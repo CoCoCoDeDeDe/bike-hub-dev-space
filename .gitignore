@@ -1,6 +1,10 @@
 # 本地 git 工作区（主库 + 5 个 worktree），不入库
 repos/
 
+# 本地临时空间：内容不入库，仅保留目录占位
+docs/tmp/*
+!docs/tmp/.gitkeep
+
 # 系统与编辑器
 .DS_Store
 Thumbs.db
