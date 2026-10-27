@@ -1,5 +1,9 @@
-# 本地 git 工作区（主库 + 5 个 worktree），不入库
-repos/
+# 本地 git 工作区：仅保留目录占位，主库与 worktree 不入库
+/repos/*
+!/repos/.gitkeep
+!/repos/bh/
+/repos/bh/*
+!/repos/bh/.gitkeep
 
 # 本地临时空间：内容不入库，仅保留目录占位
 docs/tmp/*
