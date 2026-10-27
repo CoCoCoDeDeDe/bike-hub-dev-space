@@ -1,0 +1,7 @@
+# 本地 git 工作区（主库 + 5 个 worktree），不入库
+repos/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.log
