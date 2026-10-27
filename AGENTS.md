@@ -21,5 +21,6 @@ dev-space   // repo: `bike-hub-dev-space`
 |   |-bike-hub-side-3/  // 同上
 |   |-bike-hub-side-4/  // 同上
 |   |-bike-hub-side-5/  // 同上
+|-scripts/   // 工作空间管理脚本（worktree 初始化、状态查看、增删）
 |-AGENTS.md // 工作空间提示词（当前文件）
 ```
