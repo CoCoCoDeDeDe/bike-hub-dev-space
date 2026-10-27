@@ -2,6 +2,34 @@
 
 工作空间管理脚本。作用是把「主库 + N 个并行 worktree」这套结构变成可重复、可重建的操作，避免每次靠记忆敲命令。
 
+## doctor.sh
+
+开工前的环境体检，只诊断、不改动。
+
+```bash
+./scripts/doctor.sh
+```
+
+五组检查：
+
+| 分组 | 检查内容 |
+| --- | --- |
+| 系统 | WSL2、磁盘空间、git、git 全局身份 |
+| 工具链 | gh 登录状态、python3、node、PlatformIO、mosquitto、node-red |
+| 工作区 | 主库、worktree 数量、未提交改动、main 同步状态 |
+| 硬件通路 | 串口设备、dialout 组、usbipd、lsusb |
+| 网络 | github.com、GitHub API |
+
+输出用三种标记：`✓` 正常、`!` 警告（不阻塞）、`✗` 失败（会阻塞）。
+
+**退出码**：有失败返回 `1`，否则 `0`。所以可以直接串进脚本：
+
+```bash
+./scripts/doctor.sh && echo "环境 OK，开工"
+```
+
+每次换了新终端、插拔了板子、或者隔几天没开工，先跑一次，比事后排查快。
+
 ## worktree.sh
 
 管理 `repos/bh/` 下的主库与 worktree。
